@@ -39,6 +39,21 @@ define(['jquery','underscore','qlik','ng!$q'], function ($, _, qlik, $q) {
                         expression: "optional",
                         defaultValue: ''
                     }
+                    ,
+                    numericflag: {
+                        type: "boolean",
+                        component: "switch",
+                        label: "Numeric",
+                        ref: "numericFlag",
+                        options: [{
+                            value: true,
+                            label: "Numeric"
+                        }, {
+                            value: false,
+                            label: "String"
+                        }],
+                        defaultValue: false
+                    }
                 }
             }
         }

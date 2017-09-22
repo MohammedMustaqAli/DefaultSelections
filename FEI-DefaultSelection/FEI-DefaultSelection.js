@@ -6,7 +6,12 @@ define(['jquery', 'qlik', './properties'], function ($, qlik, properties) {
         controller: function ($element, $scope) {
             var app = qlik.currApp(this);
             var layout = $scope.component.model.layout;
-            app.field(layout.field).selectValues([layout.fieldvalue], true, true);
+            if(layout.numericFlag){
+                app.field(layout.field).selectValues([parseInt(layout.fieldvalue)], true, true);
+            }
+            else{
+                app.field(layout.field).selectValues([layout.fieldvalue], true, true);
+            }
         }
     };
 });
